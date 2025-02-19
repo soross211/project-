@@ -1,0 +1,121 @@
+1. Create a Payment (POST Request)
+Endpoint: POST http://localhost:3000/api/payments
+
+Body: JSON payload with payment details.
+
+Steps:
+
+Open Postman.
+
+Set the request type to POST.
+
+Enter the URL: http://localhost:3000/api/payments.
+
+Go to the Body tab, select raw, and choose JSON from the dropdown.
+
+Add the following JSON payload:
+
+json
+
+Copy
+{
+  "payerName": "John Doe",
+  "amount": 100,
+  "paymentMethod": "Credit Card"
+}
+
+2. Get All Payments (GET Request)
+Endpoint: GET http://localhost:3000/api/payments
+
+Steps:
+
+Set the request type to GET.
+
+Enter the URL: http://localhost:3000/api/payments.
+
+Click Send.
+
+Expected Response:
+
+json
+
+Copy
+[
+  {
+    "id": 1,
+    "payerName": "John Doe",
+    "amount": 100,
+    "paymentMethod": "Credit Card",
+    "date": "2023-10-15T12:34:56.000Z"
+}
+]
+
+3. Get a Single Payment by ID (GET Request)
+Endpoint: GET http://localhost:3000/api/payments/:id
+
+Steps:
+
+Set the request type to GET.
+
+Enter the URL: http://localhost:3000/api/payments/1 (replace 1 with the ID of the payment you want to retrieve).
+
+Click Send.
+
+Expected Response:
+
+json
+
+Copy
+{
+  "id": 1,
+  "payerName": "John Doe",
+  "amount": 100,
+  "paymentMethod": "Credit Card",
+  "date": "2023-10-15T12:34:56.000Z"
+}
+
+
+4. Update a Payment (PUT Request)
+Endpoint: PUT http://localhost:3000/api/payments/:id
+
+Body: JSON payload with updated payment details.
+
+Steps:
+
+Set the request type to PUT.
+
+Enter the URL: http://localhost:3000/api/payments/1 (replace 1 with the ID of the payment you want to update).
+
+Go to the Body tab, select raw, and choose JSON from the dropdown.
+
+Add the following JSON payload:
+
+json
+
+Copy
+{
+  "payerName": "Jane Doe",
+  "amount": 150,
+  "paymentMethod": "PayPal"
+}
+
+
+5. Delete a Payment (DELETE Request)
+Endpoint: DELETE http://localhost:3000/api/payments/:id
+
+Steps:
+
+Set the request type to DELETE.
+
+Enter the URL: http://localhost:3000/api/payments/1 (replace 1 with the ID of the payment you want to delete).
+
+Click Send.
+
+Expected Response:
+
+json
+
+Copy
+{
+  "message": "Payment deleted"
+}
